@@ -9,6 +9,10 @@ function onHashChange() {
        	timeout: 15000,
        	load: function(contents) {
 		dojo.byId("d").innerHTML = contents;
+	},
+	error: function() {
+		var a = arguments;
+		alert(a);
 	}
   });
 }
