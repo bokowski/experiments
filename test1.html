@@ -12,6 +12,7 @@ function onHashChange() {
 	}
   });
 }
+document.domain = "github.com";
 dojo.subscribe("/dojo/hashchange", window, onHashChange);
 dojo.addOnLoad(onHashChange);
 </script>
