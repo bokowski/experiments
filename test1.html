@@ -6,7 +6,6 @@ dojo.require("dojo.hash");
 function onHashChange() {
   dojo.xhrGet({
        	url: dojo.hash(),
-       	handleAs: "json",
        	timeout: 15000,
        	load: function(contents) {
 		dojo.byId("d").innerHTML = contents;
