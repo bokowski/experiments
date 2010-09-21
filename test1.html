@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
+<script type="text/javascript">
+dojo.require("dojo.hash");
+function onHashChange() {
+  dojo.xhrGet({
+       	url: dojo.hash(),
+       	handleAs: "json",
+       	timeout: 15000,
+       	load: function(contents) {
+		dojo.byId("d").innerHTML = contents;
+	}
+  });
+}
+dojo.subscribe("/dojo/hashchange", window, onHashChange);
+dojo.addOnLoad(onHashChange);
+</script>
+</head>
+<body">
+<div id="d">
+</div>
+</body>
+</html>
